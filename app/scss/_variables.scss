@@ -1,0 +1,645 @@
+// Variables
+
+// Table of Contents
+//
+// Color System
+// Options
+// Spacing
+// Link
+// Grid Breakpoints
+// Components
+// Fonts
+// Icons
+// Tables
+
+
+$trp-prefix: trp !default;
+$icon-css-prefix: trp-icon !default;
+
+// ************************
+// ***** Color System *****
+// ************************
+
+// Primary Supporting Colors
+$trp-bright-blue: #05C3DE !default;
+$trp-dk-blue: #054C70 !default;
+$trp-gray: #3B3B3B !default;
+
+// Functional Brand Colors
+$trp-orange: #E17A17 !default;
+$trp-green: #7D9845 !default;
+$trp-purple: #614B79 !default;
+$trp-teal: #38939B !default;
+$trp-yellow: #FFDD00 !default;
+
+$trp-interactive-default: #086EA1 !default;
+
+
+//Alert Colors
+$trp-red: #DA291C !default;
+$trp-alert-blue: #006A89 !default;
+$trp-alert-green: #007E21 !default;
+$trp-alert-yellow: #E2A700 !default;
+
+// Primary Supporting Colors + Grays
+$white: #FFFFFF !default;
+$gray-100: #F1F1F1 !default;
+$gray-200: #EBEBEB !default;
+$gray-300: #D8D8D8 !default;
+$gray-400: #C4C4C4 !default;
+$gray-500: #898989 !default;
+$gray-600: #767676 !default;
+$gray-700: #626262 !default;
+$gray-800: #4F4F4F !default;
+$gray-900: #3B3B3B !default;
+$black: #000000 !default;
+
+$grays: (
+  100: $gray-100,
+  200: $gray-200,
+  300: $gray-300,
+  400: $gray-400,
+  500: $gray-500,
+  600: $gray-600,
+  700: $gray-700,
+  800: $gray-800,
+  900: $gray-900
+) !default;
+
+$theme-colors: (
+  primary: $trp-bright-blue,
+  secondary: $trp-dk-blue,
+  // success:
+  // info:
+  // warning:
+  // light:
+  // dark:
+  main: $trp-gray
+) !default;
+
+$input-colors: (
+  input-border: $gray-600,
+  input-bg: $white,
+  focus-border: $trp-bright-blue,
+  focus-bg: $white,
+  disabled-border: $gray-400,
+  disabled-bg: $gray-300,
+  error-border: #da291c,
+  error-bg: $white,
+  success-border: #00843d,
+  success-bg: $white
+) !default;
+
+$body-bg:       $white !default;
+$body-color:    $gray-900 !default;
+
+// ************************
+// ******* Options ********
+// ************************
+
+$enable-rounded:            true !default;
+$enable-shadows:            false !default;
+$enable-gradients:          false !default;
+$enable-transitions:        true !default;
+$enable-hover-media-query:  false !default;
+$enable-grid-classes:       true !default;
+$enable-print-styles:       true !default;
+
+$transition-base:             all .2s ease-in-out !default;
+$transition-fade:             opacity .15s linear !default;
+$transition-collapse:         height .35s ease !default;
+
+// ************************
+// ******* Spacing ********
+// ************************
+
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3)
+) !default;
+
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: (
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%
+) !default;
+
+// ************************
+// ********* Link *********
+// ************************
+
+$link-color:            #086EA1 !default;
+$link-decoration:       none !default;
+$link-hover-color:      darken($link-color, 12%) !default;
+$link-hover-decoration: underline !default;
+
+$btn-secondary-color:   #086EA1 !default;
+$btn-secondary-hover-color: darken($btn-secondary-color, 12%) !default;
+
+$btn-callout-color:   #E47F00 !default;
+$btn-callout-hover-color: darken($btn-callout-color, 12%) !default;
+
+// ************************
+// *** Grid Breakpoints ***
+// ************************
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints);
+
+
+// Grid containers
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 940px,
+  xl: 1140px
+) !default;
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+
+// Grid columns
+$grid-columns: 12 !default;
+$grid-gutter-width: 30px !default;
+
+
+// ************************
+// ****** Components ******
+// ************************
+
+$border-width: 1px !default;
+
+$border-radius:          .25rem !default;
+$border-radius-lg:       .3rem !default;
+$border-radius-sm:       .2rem !default;
+
+$divider-mb-mobile: 15px;
+$divider-mb-tablet: 20px;
+$divider-mb-desktop: 30px;
+
+// ************************
+// ********* Fonts ********
+// ************************
+
+// Light - 300 / normal
+@font-face {
+    font-family: 'Nimbus Sans Novus';
+    src: url('../fonts/5838f40c-4590-4e32-b164-c2971fcef883.eot');
+    src: url('../fonts/5838f40c-4590-4e32-b164-c2971fcef883.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/0735b4aa-4513-4002-8c4d-1b5dd2f43b74.woff2') format('woff2'),
+         url('../fonts/5fe27aff-ba5a-4022-adaf-b8fa6f8642cb.woff') format('woff'),
+         url('../fonts/50c13c0a-595a-4cca-b4cc-2edcd6eb67aa.ttf') format('truetype'),
+         url('../fonts/1035c5fa-5027-4156-9de4-bb0d6f7a0a86.svg#1035c5fa-5027-4156-9de4-bb0d6f7a0a86') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+// Light Italic - 300 / italic
+@font-face {
+    font-family: 'Nimbus Sans Novus';
+    src: url('../fonts/e00cf3a3-f7da-4e9e-abe7-1dee3a878eb4.eot');
+    src: url('../fonts/e00cf3a3-f7da-4e9e-abe7-1dee3a878eb4.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/5a8822da-5871-4045-868a-5ad0f9181949.woff2') format('woff2'),
+         url('../fonts/35958999-ac3c-4d50-b34e-7b4d8bac8a29.woff') format('woff'),
+         url('../fonts/c6ca660d-e7ff-406b-b431-05a6c99cc3d1.ttf') format('truetype'),
+         url('../fonts/1035c5fa-5027-4156-9de4-bb0d6f7a0a86.svg#1035c5fa-5027-4156-9de4-bb0d6f7a0a86') format('svg');
+    font-weight: 300;
+    font-style: italic;
+}
+
+// Regular - 400 / normal
+@font-face {
+    font-family: 'Nimbus Sans Novus';
+    src: url('../fonts/75144806-5cb9-4743-95cf-40b7f3df5dda.eot');
+    src: url('../fonts/75144806-5cb9-4743-95cf-40b7f3df5dda.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/bc1599b9-3e3c-4821-8a1b-37b230da78f8.woff2') format('woff2'),
+         url('../fonts/4e93482e-40f7-4349-a9c2-f8882f15a93b.woff') format('woff'),
+         url('../fonts/55bc1387-86c7-452b-ae79-2721ea3b0645.ttf') format('truetype'),
+         url('../fonts/b5edab57-23a8-4bc5-bab3-df39a838bd75.svg#b5edab57-23a8-4bc5-bab3-df39a838bd75') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+// Regular - 400 / italic
+@font-face {
+    font-family: 'Nimbus Sans Novus';
+    src: url('../fonts/e72ca5a1-1646-4fef-99da-86e885e0dcc2.eot');
+    src: url('../fonts/e72ca5a1-1646-4fef-99da-86e885e0dcc2.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/8ea0c48f-c3f6-4908-b496-9e0de9179a57.woff2') format('woff2'),
+         url('../fonts/dba5e401-3960-4a18-97b1-2be19825905f.woff') format('woff'),
+         url('../fonts/52e883a7-42a2-496c-babe-b43ae36f03cb.ttf') format('truetype'),
+         url('../fonts/56422800-92a1-4abb-be9e-ff8832402d91.svg#56422800-92a1-4abb-be9e-ff8832402d91') format('svg');
+    font-weight: 400;
+    font-style: italic;
+}
+
+// Bold - 700 / normal
+@font-face {
+    font-family: 'Nimbus Sans Novus';
+    src: url('../fonts/9dca25dd-18d2-4ec8-a997-ef28c2f4f136.eot');
+    src: url('../fonts/9dca25dd-18d2-4ec8-a997-ef28c2f4f136.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/10bdcd04-2bea-42bc-ae40-153b09ae5c4d.woff2') format('woff2'),
+         url('../fonts/ce398c7a-fb54-4409-89f7-241065e2af3d.woff') format('woff'),
+         url('../fonts/fd862b64-8bf7-47e5-81d6-ee4cc1ac851f.ttf') format('truetype'),
+         url('../fonts/75896f69-6e33-4f29-97b1-1a105d9d6396.svg#75896f69-6e33-4f29-97b1-1a105d9d6396') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+// Bold Italic - 700 / italic
+@font-face {
+    font-family: 'Nimbus Sans Novus';
+    src: url('../fonts/ccafbdcf-bc77-4739-9013-f2213bd07292.eot');
+    src: url('../fonts/ccafbdcf-bc77-4739-9013-f2213bd07292.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/57b72dba-1a09-403b-81e6-d8896395d255.woff2') format('woff2'),
+         url('../fonts/e915abf8-c64c-4e61-a539-b27e6d6d1cb3.woff') format('woff'),
+         url('../fonts/638958ab-67f4-47b1-988c-0e2473d88c7f.ttf') format('truetype'),
+         url('../fonts/477e1b11-77d9-4a5e-aa23-002d4567ff88.svg#477e1b11-77d9-4a5e-aa23-002d4567ff88') format('svg');
+    font-weight: 700;
+    font-style: italic;
+}
+
+// Black - 900 / normal
+@font-face {
+    font-family: 'Nimbus Sans Novus';
+    src: url('../fonts/6e7669a6-aefe-4097-b421-9ec71403a22d.eot');
+    src: url('../fonts/6e7669a6-aefe-4097-b421-9ec71403a22d.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/c253c5d7-8882-4cf6-a6b4-321cfb4ec9a7.woff2') format('woff2'),
+         url('../fonts/3840226d-5bab-4b9b-80df-35e9c89e7be9.woff') format('woff'),
+         url('../fonts/9ea9358a-bb9c-4c89-b262-7b66643417f2.ttf') format('truetype'),
+         url('../fonts/1b198f74-3cd7-4858-98e8-ebd053ea936a.svg#1b198f74-3cd7-4858-98e8-ebd053ea936a') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+// Black Italic - 900 / italic
+@font-face {
+    font-family: 'Nimbus Sans Novus';
+    src: url('../fonts/d65594dd-439a-438d-9e9f-385d91670961.eot');
+    src: url('../fonts/d65594dd-439a-438d-9e9f-385d91670961.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/4d484c1c-f1a2-4c7e-b1dd-741acb8e61b2.woff2') format('woff2'),
+         url('../fonts/535c1332-c2c4-45a5-8ae8-66b8f9a27c07.woff') format('woff'),
+         url('../fonts/c85aff7d-2134-4595-b03c-2787d8915b6d.ttf') format('truetype'),
+         url('../fonts/39b14b7c-3020-403d-bd0b-20c9799bab26.svg#39b14b7c-3020-403d-bd0b-20c9799bab26') format('svg');
+    font-weight: 900;
+    font-style: italic;
+}
+
+$font-family-sans-serif: 'Nimbus Sans Novus', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:       $font-family-sans-serif !default;
+
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+
+/// Large Font ///
+$font-size-lg-mobile:   1.25rem;
+$font-size-lg-tablet:   1.375rem;
+$font-size-lg-desktop:  1.5rem !default;
+$line-height-lg-mobile:  1.625rem;
+$line-height-lg-tablet:  1.75rem;
+$line-height-lg-desktop: 1.875rem !default;
+
+
+/// Medium Font ///
+$font-size-md-mobile:   1.125rem;
+$font-size-md-tablet:   1.125rem;
+$font-size-md-desktop:  1.25rem !default;
+
+$line-height-md-mobile:  1.5rem;
+$line-height-md-tablet:  1.5rem;
+$line-height-md-desktop: 1.625rem !default;
+
+/// Small Font ///
+$font-size-sm-mobile:  1.125rem;
+$font-size-sm-tablet:  1rem;
+$font-size-sm-desktop: 1rem !default;
+
+$line-height-sm-mobile:  1.5rem;
+$line-height-sm-tablet:  1.375rem;
+$line-height-sm-desktop: 1.375rem !default;
+
+$font-weight-light: 300 !default;
+$font-weight-normal: normal !default;
+$font-weight-bold: bold !default;
+
+$font-weight-base: $font-weight-normal !default;
+$line-height-base: 1.375 !default;
+
+/// Headings ///
+$h1-font-size-mobile:  3.125rem;
+$h1-font-size-tablet:  3.125rem;
+$h1-font-size-desktop: 3.75rem !default;
+
+$h2-font-size-mobile:  1.875rem;
+$h2-font-size-tablet:  2.8125rem;
+$h2-font-size-desktop: 3.4375rem !default;
+
+$h3-font-size-mobile: 1.875rem;
+$h3-font-size-tablet: 2.5rem;
+$h3-font-size-desktop: 3.125rem !default;
+
+$h4-font-size-mobile: 1.75rem;
+$h4-font-size-tablet: 2.1875rem;
+$h4-font-size-desktop: 2.5rem !default;
+
+$h5-font-size-mobile: 1.5rem;
+$h5-font-size-tablet: 1.875rem;
+$h5-font-size-desktop: 2.1875rem !default;
+
+$h6-font-size-mobile: 1.375rem;
+$h6-font-size-tablet: 1.875rem;
+$h6-font-size-desktop: 1.875rem !default;
+
+$h1-line-height-mobile: 3.125rem;
+$h1-line-height-tablet: 3.125rem;
+$h1-line-height-desktop: 3.75rem !default;
+
+$h2-line-height-mobile: 2.1875rem;
+$h2-line-height-tablet: 2.8125rem;
+$h2-line-height-desktop: 3.4375rem !default;
+
+$h3-line-height-mobile: 2.1875rem;
+$h3-line-height-tablet: 2.8125rem;
+$h3-line-height-desktop: 3.4375rem !default;
+
+$h4-line-height-mobile: 1.875rem;
+$h4-line-height-tablet: 2.5rem;
+$h4-line-height-desktop: 2.8125rem !default;
+
+$h5-line-height-mobile: 1.875rem;
+$h5-line-height-tablet: 2.1875rem;
+$h5-line-height-desktop: 2.8125rem !default;
+
+$h6-line-height-mobile: 1.75rem;
+$h6-line-height-tablet: 2.1875rem;
+$h6-line-height-desktop: 2.5rem !default;
+
+$headings-margin-btm-mobile: 20px;
+$headings-margin-btm-tablet: 30px;
+$headings-margin-btm-desktop: 45px;
+
+/// Subheadings ///
+
+$subhead-font-size-mobile: 1.125rem;
+$subhead-font-size-tablet: 1.375rem;
+$subhead-font-size-desktop: 1.375rem !default;
+
+$subhead-line-height-mobile: 1.375rem;
+$subhead-line-height-tablet: 1.75rem;
+$subhead-line-height-desktop: 1.75rem !default;
+
+$subhead-sm-font-size-mobile: 1.125rem;
+$subhead-sm-font-size-tablet: 1.125rem;
+$subhead-sm-font-size-desktop: 1.125rem !default;
+
+$subhead-sm-line-height-mobile: 1.5rem;
+$subhead-sm-line-height-tablet: 1.5rem;
+$subhead-sm-line-height-desktop: 1.5rem !default;
+
+$subhead-margin-bottom: 30px !default;
+
+
+$headings-font-family:   inherit !default;
+$headings-font-weight:   300 !default;
+$headings-line-height:   1.1 !default;
+$headings-color:         $gray-800 !default;
+
+$display1-size: 6rem !default;
+$display2-size: 5.5rem !default;
+$display3-size: 4.5rem !default;
+$display4-size: 3.5rem !default;
+
+$display1-weight:     300 !default;
+$display2-weight:     300 !default;
+$display3-weight:     300 !default;
+$display4-weight:     300 !default;
+$display-line-height: $headings-line-height !default;
+
+$lead-font-size:   1.25rem !default;
+$lead-font-weight: 300 !default;
+
+$small-font-size: 80% !default;
+
+$text-muted: $gray-600 !default;
+
+$blockquote-small-color:  $gray-600 !default;
+$blockquote-font-size:    ($font-size-base * 1.25) !default;
+
+$hr-border-color: rgba($black,.1) !default;
+$hr-border-width: $border-width !default;
+
+$mark-padding: .2em !default;
+
+$dt-font-weight: $font-weight-bold !default;
+
+$kbd-box-shadow:         inset 0 -.1rem 0 rgba($black,.25) !default;
+$nested-kbd-font-weight: $font-weight-bold !default;
+
+$list-inline-padding: 5px !default;
+
+$mark-bg: #fcf8e3 !default;
+
+
+// ************************
+// ********* Icons ********
+// ************************
+
+$icon-css-prefix: trp-icon !default;
+
+$icon-sm-mobile:  18px !default;
+$icon-sm-tablet:  20px !default;
+$icon-sm-desktop: 20px !default;
+
+$icon-md-mobile:  25px !default;
+$icon-md-tablet:  30px !default;
+$icon-md-desktop: 30px !default;
+
+@font-face {
+  font-family: "TRP Icons";
+  src:url("../icons/streamline-24px.eot");
+  src:url("../icons/streamline-24px.eot?#iefix") format("embedded-opentype"),
+    url("../icons/streamline-24px.woff") format("woff"),
+    url("../icons/streamline-24px.ttf") format("truetype"),
+    url("../icons/streamline-24px.svg#streamline-24px") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$icon-font: "TRP Icons";
+
+[data-icon]:before {
+  font-family: $icon-font;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="trp-icon-"]:before,
+[class*=" trp-icon-"]:before {
+  font-family: $icon-font;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// ************************
+// ******** Tables ********
+// ************************
+
+$table-cell-padding:            .75rem !default;
+$table-cell-padding-sm:         .3rem !default;
+
+$table-bg:                      transparent !default;
+$table-accent-bg:               rgba($black,.05) !default;
+$table-hover-bg:                rgba($black,.075) !default;
+$table-active-bg:               $table-hover-bg !default;
+
+$table-border-width:            $border-width !default;
+$table-border-color:            $gray-200 !default;
+
+$table-head-bg:                 $gray-200 !default;
+$table-head-color:              $gray-700 !default;
+
+$table-inverse-bg:              $gray-900 !default;
+$table-inverse-accent-bg:       rgba($white, .05) !default;
+$table-inverse-hover-bg:        rgba($white, .075) !default;
+$table-inverse-border-color:    lighten($gray-900, 7.5%) !default;
+$table-inverse-color:           $body-bg !default;
+
+// ************************
+// ******* Buttons ********
+// ************************
+
+
+
+// ************************
+// ******** Forms *********
+// ************************
+
+$tooltip-sm-size: 18px;
+$tooltip-md-size: 16px;
+$tooltip-lg-size: 16px;
+
+$select-height: 40px;
+$select-bg: $white;
+
+$options-bg: $white;
+$options-color: $trp-gray;
+$options-hover-bg: $gray-400;
+$options-hover-color: $trp-bright-blue;
+
+$input-padding-y: .5rem !default;
+$input-padding-x: 1rem !default;
+
+$input-line-height: $line-height-base !default;
+
+$input-color: $trp-gray !default;
+$input-bg: map-get($input-colors, input-bg);
+$input-border-width: 1px;
+$input-border-color: map-get($input-colors, input-border);
+
+$input-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s !default;
+
+$input-focus-color: $trp-gray !default;
+$input-focus-bg: map-get($input-colors, focus-bg);
+$input-focus-border-color: map-get($input-colors, focus-border);
+
+$input-disabled-bg: map-get($input-colors, disabled-bg);
+$input-disabled-border-color: map-get($input-colors, disabled-border);
+
+$input-placeholder-color: $gray-600 !default;
+
+$form-feedback-valid-color: map-get($input-colors, success-border);
+$form-feedback-invalid-color: map-get($input-colors, error-border);
+
+$form-group-margin-btm: map-get($spacers, 4);
+
+// CHECK BOXES //
+
+$checkbox-sm-size: 1.125rem !default;
+$checkbox-md-size: 1.125rem !default;
+$checkbox-lg-size: 1rem !default;
+
+$checkbox-border-color: $black;
+$checkbox-border-width: 1px;
+$checkbox-bg: $white;
+
+$checkbox-hover-border: $black;
+$checkbox-hover-bg: $white;
+
+$checkbox-checked-border-color: $link-color;
+$checkbox-checked-bg: $link-color;
+
+$checkbox-disabled-border-color: $input-disabled-border-color;
+$checkbox-disabled-bg-color: $input-disabled-bg;
+
+$checkbox-label-padding: 1.75rem;
+
+$checkmark-color: $white;
+$checkmark-disabled-color: $input-placeholder-color;
+
+$checkmark-transition: border-color ease-in-out .25s, background-color ease-in-out .25s, opacity ease-in-out .25s !default;
+
+$checkmark-sizes: (
+  1: 12px,
+  2: 14px,
+  3: 16px
+);
+
+$checkmark-sm-weight: 3px;
+$checkmark-md-weight: 3px;
+$checkmark-lg-weight: 3px;
+
+$checkmark-sm-height: map-get($checkmark-sizes, 1);
+$checkmark-sm-width: ($checkmark-sm-height / 2);
+$checkmark-sm-y: 1px;
+$checkmark-sm-x: 5px;
+
+$checkmark-md-height: map-get($checkmark-sizes, 2);
+$checkmark-md-width: ($checkmark-md-height / 2);
+$checkmark-md-y: 2px;
+$checkmark-md-x: 6px;
+
+$checkmark-lg-height: map-get($checkmark-sizes, 3);
+$checkmark-lg-width: ($checkmark-lg-height / 2);
+$checkmark-lg-y: 2px;
+$checkmark-lg-x: 6px;
+
+// RADIO BUTTONS //
+
+$radio-btn-sm-size: 1.125rem !default;
+$radio-btn-md-size: 1.125rem !default;
+$radio-btn-lg-size: 1rem !default;
+
+$radio-dot-sm-size: 8px;
+$radio-dot-md-size: 8px;
+$radio-dot-lg-size: 8px;
+
+$radio-dot-sm-position: 4px;
+$radio-dot-md-position: 4px;
+$radio-dot-lg-position: 4px;

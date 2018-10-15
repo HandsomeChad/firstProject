@@ -1,0 +1,93 @@
+// Button
+
+// Table of Contents
+//
+// Default
+// Primary Buttons
+// Dark Buttons
+
+
+// ************************
+// ********* Default ******
+// ************************
+
+
+
+button, .trp-btn, input[type="submit"], .btn-primary {
+  box-sizing: border-box;
+  background-color: $trp-orange;
+  font-weight: $btn-font-weight;
+  border-radius: 5px;
+  color: #FFFFFF;
+  border: none;
+  padding: .65rem 1.5rem;
+  transition: all .5s ease-out;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid transparent;
+  height: 50px;
+
+
+  &:focus {
+    outline: none;
+    background-color: $trp-orange;
+  } // :focus
+
+  &:hover {
+    background-color: darken($trp-orange, 8%);
+    box-shadow: none;
+  } // :hover
+
+  &:active {
+    background-color: darken($trp-orange, 8%);
+    outline: none;
+  } // :active
+
+  &.disabled {
+    background-color: $gray-300;
+    color: $gray-400;
+    cursor: default;
+    pointer-events: none;
+    border: none;
+    &:hover {
+      background-color: $gray-300;
+      color: $gray-400;
+    }
+  } // .trp-btn.disabled
+
+  &.loading {
+    background-image: url("../images/trp_loader.svg");
+    background-position: center;
+    background-size: 34px;
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+  } // .loading
+  
+  &.btn-sm {
+    padding: .2rem 1.5rem;
+  } // .btn-sm
+
+  &.btn-lg {
+    padding: .95rem 2rem;
+    font-size: 1.25em;
+  } // .btn-lg
+
+  //
+  // Block button
+  //
+
+  &.btn-block {
+    display: block;
+    width: 100%;
+  }
+
+
+} // button
+
+
+// ************************
+// **** Primary Buttons ***
+// ************************
+.trp-btn { border: 0px solid transparent; }
+
+

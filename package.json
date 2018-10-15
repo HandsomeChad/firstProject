@@ -1,0 +1,44 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "\"T. Rowe Price prototype\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Hello there.\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HandsomeChad/build.git"
+  },
+  "keywords": [
+    "prototype"
+  ],
+  "author": "Chad Smith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HandsomeChad/build/issues"
+  },
+  "homepage": "https://github.com/HandsomeChad/build#readme",
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-cache": "^1.0.2",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.4",
+    "run-sequence": "^2.2.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-traceur": "^0.18.0",
+    "jquery": "^3.3.1",
+    "popper": "^1.0.1",
+    "popper.js": "^1.12.9",
+    "tether": "^1.4.3"
+  }
+}
