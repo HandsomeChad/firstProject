@@ -10,6 +10,7 @@ var cache = require('gulp-cache');
 var del = require('del')
 var runSequence = require('run-sequence');
 
+// Delete this line: "Something new just to commit :)"
 //new plugins
 // var plumber = require('gulp-plumber');
 // var notify = require('gulp-notify');
