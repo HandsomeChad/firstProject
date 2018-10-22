@@ -6249,7 +6249,6 @@ a:active {
     max-width: 100%; }
   .container-fluid .contentBox {
     height: auto;
-    background-color: #fff;
     padding-left: 0px;
     padding-right: 0px; }
     .container-fluid .contentBox .content {
@@ -6257,8 +6256,7 @@ a:active {
       padding-left: 0px;
       padding-right: 0px;
       font-size: 80%;
-      color: #dee2e6;
-      background-color: #fff; }
+      color: #dee2e6; }
       .container-fluid .contentBox .content .row {
         padding-left: 0px;
         padding-right: 0px;
@@ -6269,13 +6267,10 @@ a:active {
       .container-fluid .contentBox .content .content-squares {
         height: auto; }
         .container-fluid .contentBox .content .content-squares .content-square {
-          background-color: #fff;
           padding-left: 30px;
           padding-bottom: 80px;
           padding-top: 30px;
           padding-right: 40px; }
-          .container-fluid .contentBox .content .content-squares .content-square.about {
-            background-color: #f8f9fa; }
           .container-fluid .contentBox .content .content-squares .content-square .left-rule {
             width: 1px;
             height: 80%;
@@ -6686,3 +6681,23 @@ a:active {
   height: 40px;
   letter-spacing: 0;
   background-color: red; }
+
+@media only screen and (max-width: 400px) {
+  body {
+    background-color: oldlace; } }
+
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+  body {
+    background-color: honeydew; } }
+
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+  body {
+    background-color: seashell; } }
+
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  body {
+    background-color: mintcream; } }
+
+@media only screen and (min-width: 1200px) {
+  body {
+    background-color: azure; } }
