@@ -38,7 +38,7 @@ function customPlumber(errTitle) {
 		errorHandler: notify.onError({
 			title: errTitle || "Error running Gulp",
 			message: "Error: <%= error.message %",
-		}) 
+		})
 		// function(err) {
 			//logs error in console
 			// console.log(err.stack);
@@ -86,7 +86,7 @@ gulp.task('watch', ['browserSync', 'sass'], function() {
 
 
 
-gulp.task('browserSync', function() {	
+gulp.task('browserSync', function() {
 	browserSync.init({
 		server: { baseDir: 'app' },
 	})
@@ -96,7 +96,7 @@ gulp.task('browserSync', function() {
 
 //optimize assets
 gulp.task('useref', function() {
-	return gulp.src('app/*.html') 
+	return gulp.src('app/*.html')
 		.pipe(useref())
 		//minifies only if it's a Javascript file
 		.pipe(gulpIf('*.js', uglify()))
@@ -142,23 +142,3 @@ gulp.task('build', function(callback){
 	 callback
 	 )
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
