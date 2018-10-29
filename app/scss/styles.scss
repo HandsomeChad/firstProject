@@ -20,9 +20,11 @@ body {
   font-weight: 400;
   color: #999;
   overflow: hidden;
-  max-width: 1000;
+  max-width: 1000px;
+  position: relative;
+  width: 95%;
+  left: 2.5%;
 }
-
 
 //mixins
 @mixin flow() {
@@ -36,10 +38,10 @@ body {
     margin-right: auto;
 }
 @mixin zeroOut() {
-    padding-left: 0px;
-    padding-right: 0px;
-    margin-left: 0px;
-    margin-right:0px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right:0;
 }
 
 a {
@@ -58,8 +60,6 @@ a:active {
     color: $gray-900;
 }
 
-
-
 //helper classes
 .remove-all-margin-padding{
     margin:0 ! important;
@@ -75,10 +75,11 @@ a:active {
 header {
   height: 200px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding-top: 64px;
   width: 100%;
-  left: 0%;
+  left: 0;
   position: relative;
   max-width: 1000px;
 
@@ -93,15 +94,20 @@ header {
     }
 
     .student {
-      padding-top: 0px;
+      padding-top: 0;
       padding-left: 30px;
       text-align: right;
+      display: inline-block;
+      text-transform: uppercase;
+      position: relative;
+
     }
 
 }
 
 main {
   display: flex;
+  flex-wrap: wrap;
   max-width: 1000px;
 
   section.leftColumn {
@@ -117,6 +123,7 @@ main {
       font-size: 16px;
       text-align: center;
       margin-bottom: 15px;
+
     }
 
     .hex-color-square {
@@ -143,7 +150,7 @@ main {
     width: 85%;
     left: 5%;
     position: relative;
-    border-top: solid 2px #999;
+    border-top: solid 6px #02b3e4;
 
     .titleImage {
       width: 100%;
@@ -161,20 +168,31 @@ main {
     .featured-work-container {
       width: 100%;
       display: flex;
+      flex-wrap: wrap;
       flex-direction: row;
       justify-content: space-between;
       text-align: center;
       margin-top: 40px;
+      margin-bottom: 50px;
       padding-bottom: 30px;
 
+      h2 {
+        display: block;
+        clear: both;
+        width: 100%;
+        text-align: left;
+        padding-bottom: 20px;
+      }
 
       .featured-work {
         width: 30%;
+        clear: both;
         height: auto;
         border: solid 1px #EBEBEB;
         border-radius: 4px;
         overflow: hidden;
         text-decoration: none;
+        padding-bottom: 30px;
 
         &:hover {
           box-shadow: 0px 0px 22px -1px rgba(0,0,0,0.1);
@@ -183,11 +201,12 @@ main {
         .featured-work-image {
           background-color: lightblue;
           width: 100%;
-          height: 60%;
+          height: auto;
           overflow: hidden;
 
           img {
             width: 100%;
+            height: 100%;
           }
         }
 
@@ -197,7 +216,8 @@ main {
           font-weight: 300;
           color: #999;
           padding-top: 19px;
-          margin-bottom: 0px;
+          margin-bottom: 0;
+          font-size: 1.5em;
         }
 
         .featured-work-url {
@@ -205,16 +225,13 @@ main {
           font-weight: 300;
           color: #999;
           margin-top: -5px;
-          font-size: 12px;
+          font-size: 0.5em;
 
         }
       }
 
     }
-
-
   }
-
 }
 
 footer {
@@ -234,103 +251,115 @@ footer {
   }
 }
 
-
-
-
-
-
-
-// Sample Media Queries
-
 // Extra Small Screens (mobile)
-@media only screen and (max-width: 400px) {
-    .contain {
-        // background-color: oldlace;
+@media only screen and (max-width: 600px) {
 
-    }
-}
+  header {
+    justify-content: flex-start;
+    height: 110px;
+    padding-top: 20px;
 
-//Small Screens (large phones and small tablets)
-@media only screen and (min-width: 401px) and (max-width: 600px) {
-    .contain {
-        // background-color: honeydew;
+    .logo {
+      width: 60px;
+      left: 5%;
+      padding: 0;
+      margin-right: 15px;
+      margin: 0;
+      }
+    .student {
+      width: 75%;
+
+      h1 {
+        font-size: 1.5em;
+        text-align: left;
+      }
+
+      h4 {
+        font-size: 1em;
+        text-align: left;
+      }
     }
+  }
+
+  main section.rightColumn {
+    width: 90%;
+    left: 5%;
+    right: 5%;
+
+    .titleImage {
+      height: auto;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .featured-work-container {
+
+      .featured-work {
+        width: 100%;
+        margin-bottom: 10px;
+        padding-bottom: 20px;
+      }
+
+      h2 {
+        font-size: 1.5em;
+        margin-top: 0;
+      }
+
+      .featured-work-image img {
+        height: 100px;
+      }
+
+      .featured-work-title h3 {
+        font-size: 1em;
+      }
+
+      .featured-work .featured-work-url {
+        font-size: 0.5em;
+      }
+    }
+  }
+
+  main section.leftColumn {
+    position: relative;
+    width: 90%;
+    left: 5%;
+    right: 5%;
+    height: auto;
+    margin-bottom: 23px;
+  }
 }
 
 //Medium Screens (tablets)
 @media only screen and (min-width: 601px) and (max-width: 992px) {
-    .contain {
-        // background-color: seashell;
-    }
+
+  .featured-work-title h3 {
+    font-size: 1em;
+  }
+
+  .featured-work-url {
+    font-size: 0.5em;
+  }
+
 }
 
 //Large Screens (large tablets and small desktops)
 @media only screen and (min-width: 993px) and (max-width: 1200px) {
-    .contain {
-        // background-color: mintcream;
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+
+  .contain {
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+  }
 }
 
 //Extra Large Screens (large desktops)
 @media only screen and (min-width: 1200px) {
-    .contain {
-        // background-color: azure;
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+
+  .contain {
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-// //Extra Small Screens (mobile)
-// @include media-breakpoint-only(xs) {
-//     body {
-//         background-color: oldlace;
-//     }
-// }
-//
-// //Small Screens (large phones and small tablets)
-// @include media-breakpoint-only(sm) {
-//     body {
-//         background-color: honeydew;
-//     }
-// }
-//
-// //Medium Screens (tablets)
-// @include media-breakpoint-only(md) {
-//     body {
-//         background-color: seashell;
-//     }
-// }
-//
-// //Large Screens (large tablets and small desktops)
-// @include media-breakpoint-only(lg) {
-//     body {
-//         background-color: mintcream;
-//         max-width: 1000px;
-//         margin-left: auto;
-//         margin-right: auto;
-//     }
-// }
-//
-// //Extra Large Screens (large desktops)
-// @include media-breakpoint-only(xl) {
-//     body {
-//         background-color: azure;
-//         max-width: 1000px;
-//         margin-left: auto;
-//         margin-right: auto;
-//     }
-// }

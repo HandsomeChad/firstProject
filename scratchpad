@@ -1,0 +1,51 @@
+scratchpad
+
+<!-- Sample picture element -->
+<!-- <picture>
+  <source media="(min-width: 800px)" srcset="head.jpg, head-2x.jpg 2x">
+  <source media="(min-width: 450px)" srcset="head-small.jpg, head-small-2x.jpg 2x">
+  <img src="head-fb.jpg" srcset="head-fb-2x.jpg 2x" alt="a head carved out of wood">
+</picture> -->
+
+
+// Bootstrap Media Queries
+// //Extra Small Screens (mobile)
+// @include media-breakpoint-only(xs) {
+//     body {
+//         background-color: oldlace;
+//     }
+// }
+//
+// //Small Screens (large phones and small tablets)
+// @include media-breakpoint-only(sm) {
+//     body {
+//         background-color: honeydew;
+//     }
+// }
+//
+// //Medium Screens (tablets)
+// @include media-breakpoint-only(md) {
+//     body {
+//         background-color: seashell;
+//     }
+// }
+//
+// //Large Screens (large tablets and small desktops)
+// @include media-breakpoint-only(lg) {
+//     body {
+//         background-color: mintcream;
+//         max-width: 1000px;
+//         margin-left: auto;
+//         margin-right: auto;
+//     }
+// }
+//
+// //Extra Large Screens (large desktops)
+// @include media-breakpoint-only(xl) {
+//     body {
+//         background-color: azure;
+//         max-width: 1000px;
+//         margin-left: auto;
+//         margin-right: auto;
+//     }
+// }

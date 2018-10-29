@@ -70,7 +70,6 @@ gulp.task('sass', function() {
 
 //gulp watch task template
 //gulp.watch('files-to-watch', ['tasks', 'to', 'run']);
-
 //our watch task
 gulp.task('watch', ['browserSync', 'sass'], function() {
 
@@ -101,7 +100,7 @@ gulp.task('useref', function() {
 		//minifies only if it's a Javascript file
 		.pipe(gulpIf('*.js', uglify()))
 		//minifies only if it's a CSS file
-		.pipe(gulpIf('*.css', cssnano()))
+		//-------------------------- .pipe(gulpIf('*.css', cssnano())) ----------//
 		.pipe(gulp.dest('dist'))
 });
 

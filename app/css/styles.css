@@ -6178,7 +6178,10 @@ body {
   font-weight: 400;
   color: #999;
   overflow: hidden;
-  max-width: 1000; }
+  max-width: 1000px;
+  position: relative;
+  width: 95%;
+  left: 2.5%; }
 
 a {
   color: #FFF; }
@@ -6206,10 +6209,11 @@ a:active {
 header {
   height: 200px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding-top: 64px;
   width: 100%;
-  left: 0%;
+  left: 0;
   position: relative;
   max-width: 1000px; }
   header .logo {
@@ -6221,12 +6225,16 @@ header {
     background-repeat: no-repeat;
     background-image: url(../images/logo.png); }
   header .student {
-    padding-top: 0px;
+    padding-top: 0;
     padding-left: 30px;
-    text-align: right; }
+    text-align: right;
+    display: inline-block;
+    text-transform: uppercase;
+    position: relative; }
 
 main {
   display: flex;
+  flex-wrap: wrap;
   max-width: 1000px; }
   main section.leftColumn {
     display: flex;
@@ -6255,7 +6263,7 @@ main {
     width: 85%;
     left: 5%;
     position: relative;
-    border-top: solid 2px #999; }
+    border-top: solid 6px #02b3e4; }
     main section.rightColumn .titleImage {
       width: 100%;
       height: 300px;
@@ -6266,40 +6274,52 @@ main {
     main section.rightColumn .featured-work-container {
       width: 100%;
       display: flex;
+      flex-wrap: wrap;
       flex-direction: row;
       justify-content: space-between;
       text-align: center;
       margin-top: 40px;
+      margin-bottom: 50px;
       padding-bottom: 30px; }
+      main section.rightColumn .featured-work-container h2 {
+        display: block;
+        clear: both;
+        width: 100%;
+        text-align: left;
+        padding-bottom: 20px; }
       main section.rightColumn .featured-work-container .featured-work {
         width: 30%;
+        clear: both;
         height: auto;
         border: solid 1px #EBEBEB;
         border-radius: 4px;
         overflow: hidden;
-        text-decoration: none; }
+        text-decoration: none;
+        padding-bottom: 30px; }
         main section.rightColumn .featured-work-container .featured-work:hover {
           box-shadow: 0px 0px 22px -1px rgba(0, 0, 0, 0.1); }
         main section.rightColumn .featured-work-container .featured-work .featured-work-image {
           background-color: lightblue;
           width: 100%;
-          height: 60%;
+          height: auto;
           overflow: hidden; }
           main section.rightColumn .featured-work-container .featured-work .featured-work-image img {
-            width: 100%; }
+            width: 100%;
+            height: 100%; }
         main section.rightColumn .featured-work-container .featured-work .featured-work-title {
           text-transform: uppercase;
           font-family: "Open Sans";
           font-weight: 300;
           color: #999;
           padding-top: 19px;
-          margin-bottom: 0px; }
+          margin-bottom: 0;
+          font-size: 1.5em; }
         main section.rightColumn .featured-work-container .featured-work .featured-work-url {
           font-family: "Open Sans";
           font-weight: 300;
           color: #999;
           margin-top: -5px;
-          font-size: 12px; }
+          font-size: 0.5em; }
 
 footer {
   width: 100%;
@@ -6314,6 +6334,60 @@ footer {
     background-color: lightblue;
     margin-left: auto;
     margin-right: auto; }
+
+@media only screen and (max-width: 600px) {
+  header {
+    justify-content: flex-start;
+    height: 110px;
+    padding-top: 20px; }
+    header .logo {
+      width: 60px;
+      left: 5%;
+      padding: 0;
+      margin-right: 15px;
+      margin: 0; }
+    header .student {
+      width: 75%; }
+      header .student h1 {
+        font-size: 1.5em;
+        text-align: left; }
+      header .student h4 {
+        font-size: 1em;
+        text-align: left; }
+  main section.rightColumn {
+    width: 90%;
+    left: 5%;
+    right: 5%; }
+    main section.rightColumn .titleImage {
+      height: auto; }
+      main section.rightColumn .titleImage img {
+        width: 100%; }
+    main section.rightColumn .featured-work-container .featured-work {
+      width: 100%;
+      margin-bottom: 10px;
+      padding-bottom: 20px; }
+    main section.rightColumn .featured-work-container h2 {
+      font-size: 1.5em;
+      margin-top: 0; }
+    main section.rightColumn .featured-work-container .featured-work-image img {
+      height: 100px; }
+    main section.rightColumn .featured-work-container .featured-work-title h3 {
+      font-size: 1em; }
+    main section.rightColumn .featured-work-container .featured-work .featured-work-url {
+      font-size: 0.5em; }
+  main section.leftColumn {
+    position: relative;
+    width: 90%;
+    left: 5%;
+    right: 5%;
+    height: auto;
+    margin-bottom: 23px; } }
+
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+  .featured-work-title h3 {
+    font-size: 1em; }
+  .featured-work-url {
+    font-size: 0.5em; } }
 
 @media only screen and (min-width: 993px) and (max-width: 1200px) {
   .contain {
